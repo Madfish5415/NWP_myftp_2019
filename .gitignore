@@ -1,0 +1,23 @@
+# Binaries
+a.out
+my_ftp
+
+# Objects
+*.o
+
+# Tests
+*.gcda
+*.gcno
+
+# Resources
+resources/
+
+# ClangFormat
+.clang-format
+
+# Jetbrains
+compile_commands.json
+.idea/
+
+# Visual Studio Code
+.vscode/
