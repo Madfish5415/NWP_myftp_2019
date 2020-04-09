@@ -31,15 +31,25 @@ PROJ_SRC			=		arguments/flag.c				\
 							buffer/buffer_create.c			\
 							buffer/buffer_read.c			\
 							buffer/buffer_write.c			\
+							client/client_connect.c			\
 							error/exception.c				\
 							server/server.c					\
+							server/server_add.c				\
 							server/server_create.c			\
 							server/server_destroy.c			\
+							server/server_get.c				\
+							server/server_handle.c			\
 							server/server_init.c			\
+							server/server_remove.c			\
+							user/user_create.c				\
+							utils/path.c					\
 							help.c							\
 
 
-TEST_SRC			=
+TEST_SRC			=		buffer/buffer_create/test1.c		\
+							buffer/buffer_read/test1.c			\
+							redirect.c							\
+
 
 CFLAGS				+=		-I $(INCL_DIR)
 CFLAGS				+=		-W -Wall -Wextra
@@ -166,6 +176,9 @@ tests_fclean:		tests_clean
 tests_re:			tests_fclean tests_run
 
 tests_sweet:		tests_run tests_clean
+
+tests_debug:		CFLAGS += -g3
+tests_debug:		tests_run
 
 tests_sh:			re
 					if [ ! -d $(TEST_DIR) ] || [ ! -f $(TEST_SH_NAME) ]; then \
