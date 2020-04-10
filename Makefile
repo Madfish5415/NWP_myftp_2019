@@ -32,6 +32,12 @@ PROJ_SRC			=		arguments/flag.c				\
 							buffer/buffer_read.c			\
 							buffer/buffer_write.c			\
 							client/client_connect.c			\
+							client/client_disconnect.c		\
+							client/client_execute.c			\
+							client/client_read.c			\
+							client/client_write.c			\
+							commands/quit.c					\
+							commands/unknown.c				\
 							error/exception.c				\
 							server/server.c					\
 							server/server_add.c				\
@@ -43,11 +49,13 @@ PROJ_SRC			=		arguments/flag.c				\
 							server/server_remove.c			\
 							user/user_create.c				\
 							utils/path.c					\
+							utils/split.c					\
 							help.c							\
 
 
 TEST_SRC			=		buffer/buffer_create/test1.c		\
 							buffer/buffer_read/test1.c			\
+							utils/split/test1.c					\
 							redirect.c							\
 
 

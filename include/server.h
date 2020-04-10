@@ -11,6 +11,7 @@
 #include "arguments.h"
 #include "client.h"
 #include "exception.h"
+#include "response.h"
 #include "type.h"
 #include "utils.h"
 

@@ -54,9 +54,6 @@ Test(buffer_read, buffer_read_02)
         free(str);
         cr_assert_eq(1, 0);
     }
-
-    write(1, str, 17);
-
     if (strcmp(str, "abcdefghijklmnopq") == 0) {
         free(str);
         cr_assert_eq(1, 1);

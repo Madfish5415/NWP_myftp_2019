@@ -1,6 +1,7 @@
 # Binaries
 a.out
 my_ftp
+unit_tests
 
 # Objects
 *.o

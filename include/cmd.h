@@ -12,9 +12,13 @@
 
 typedef struct cmd_s {
     char *cmd;
-    void (*callback)(server_t *, client_t *, char *);
+    void (*callback)(server_t *, int, char **);
 } cmd_t;
 
+/*  quit.c  */
+void cmd_quit(server_t *server, int client_index, char **cmds);
 
+/*  unknown.c  */
+void cmd_unknown(server_t *server, int client_index, char **cmds);
 
 #endif  // NWP_MY_FTP_2019_CMD_H

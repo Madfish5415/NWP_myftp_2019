@@ -11,4 +11,7 @@
 /*  path.c  */
 void path_copy(const char* const src, char *dest);
 
+/*  split.c  */
+char **split(char *str, char *delim);
+
 #endif  // NWP_MY_FTP_2019_UTILS_H

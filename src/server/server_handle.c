@@ -9,12 +9,18 @@
 
 static void handle_read(server_t *server, int fd)
 {
+    int client_index = 0;
+
     if (!FD_ISSET(fd, &server->worker[READ_SET])) return;
     if (fd == server->socket) {
         client_connect(server);
         if (server->exception.code != NO_ERROR) return;
     } else {
-
+        client_index = server_get_client(server, fd);
+        if (server->exception.code != NO_ERROR) return;
+        client_read(server, client_index);
+        if (server->exception.code != NO_ERROR) return;
+        client_execute(server, client_index);
     }
 }
 
@@ -27,9 +33,14 @@ void server_handle_read(server_t *server)
 
 static void handle_write(server_t *server, int fd)
 {
+    int client_index = 0;
+
     if (!FD_ISSET(fd, &server->worker[WRITE_SET])) return;
     if (fd != server->socket) {
-
+        client_index = server_get_client(server, fd);
+        if (server->exception.code != NO_ERROR) return;
+        client_write(server, client_index);
+        if (server->exception.code != NO_ERROR) return;
     }
 }
 
