@@ -68,9 +68,15 @@ static const char* const RESPONSE_501 =
     "501 Syntax error in parameters or arguments.\r\n";
 static const char* const RESPONSE_502 = "502 Command not implemented.\r\n";
 static const char* const RESPONSE_503 = "503 Bad sequence of commands.\r\n";
+static const char* const RESPONSE_503_PASS =
+    "503 Please use USER command before.\r\n";
 static const char* const RESPONSE_504 =
     "504 Command not implemented for that parameter.\r\n";
 static const char* const RESPONSE_530 = "530 Not logged in.\r\n";
+static const char* const RESPONSE_530_USER = "530 Permission denied.\r\n";
+static const char* const RESPONSE_530_PASS =
+    "530 Your password is being rejected, contact the server "
+    "administrator.\r\n";
 static const char* const RESPONSE_532 =
     "532 Need account for storing files.\r\n";
 static const char* const RESPONSE_550 =

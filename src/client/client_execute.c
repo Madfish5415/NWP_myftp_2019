@@ -7,11 +7,24 @@
 
 #include <string.h>
 
-#include "server.h"
 #include "cmd.h"
+#include "server.h"
 
 static const cmd_t CMD_MAPPING[] = {
     {"QUIT", &cmd_quit},
+    {"USER", &cmd_user},
+    {"PASS", &cmd_pass},
+    {"NOOP", &cmd_noop},
+    {"CDUP", &cmd_cdup},
+    {"CWD", &cmd_cwd},
+    {"DELE", &cmd_dele},
+    {"HELP", &cmd_help},
+    {"LIST", &cmd_list},
+    {"PASV", &cmd_pasv},
+    {"PORT", &cmd_port},
+    {"PWD", &cmd_pwd},
+    {"RETR", &cmd_retr},
+    {"STOR", &cmd_stor},
     {"UNKNOWN", NULL}
 };
 
@@ -41,5 +54,5 @@ void client_execute(server_t *server, int client_index)
     }
     str = strtok(str, "\r\n");
     cmds = split(str, " ");
-    execute(server, client_index, cmds);
+    if (cmds) execute(server, client_index, cmds);
 }

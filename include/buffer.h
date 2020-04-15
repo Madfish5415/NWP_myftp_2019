@@ -21,7 +21,7 @@ typedef struct buffer_s {
 } buffer_t;
 
 /*  buffer_create.c  */
-buffer_t buffer_create();
+buffer_t buffer_create(void);
 
 /*  buffer_read.c  */
 char buffer_read_character(buffer_t *buffer);

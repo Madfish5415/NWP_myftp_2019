@@ -26,6 +26,8 @@ typedef struct client_s {
     socket_t data_socket;
     struct sockaddr_in address;
     size_t address_length;
+    struct sockaddr_in data_address;
+    size_t data_address_length;
     data_mode_t data_mode;
     buffer_t read_queue;
     buffer_t write_queue;

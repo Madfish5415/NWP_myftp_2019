@@ -20,8 +20,9 @@ void server_remove_client(server_t *server, int client_index)
     tmp = server->clients[client_index];
     server->clients[client_index] = server->clients[server->clients_nbr - 1];
     server->clients[server->clients_nbr - 1] = tmp;
-    if ((server->clients = realloc(server->clients, sizeof(client_t) * (server->clients_nbr - 1))) ==
-        NULL) {
+    if ((server->clients = realloc(server->clients,
+             sizeof(client_t) * (server->clients_nbr - 1))) == NULL &&
+        server->clients_nbr - 1 != 0) {
         server->exception = new_exception(BAD_ALLOC,
             "server_remove_client (server/server_remove.c)",
             "Can't realloc 'client_t *'");

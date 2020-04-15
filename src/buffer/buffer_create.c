@@ -7,7 +7,7 @@
 
 #include "buffer.h"
 
-buffer_t buffer_create()
+buffer_t buffer_create(void)
 {
     buffer_t buffer;
 

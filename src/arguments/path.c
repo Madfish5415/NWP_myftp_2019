@@ -40,11 +40,11 @@ exception_t fill_path(int argc, char **argv, args_t *arguments)
     exception_t exception = {NO_ERROR};
 
     if (count_args(argc, argv) != 2)
-        return (new_exception(
-            INVALID_ARGUMENT, "fill_path (arguments/path.c)", "Invalid argument number"));
+        return (new_exception(INVALID_ARGUMENT, "fill_path (arguments/path.c)",
+            "Invalid argument number"));
     if ((path = find_path(argc, argv)) == NULL)
-        return (new_exception(
-            INVALID_ARGUMENT, "fill_path (arguments/path.c)", "Unable to find path"));
+        return (new_exception(INVALID_ARGUMENT, "fill_path (arguments/path.c)",
+            "Unable to find path"));
     if (!is_valid(path))
         return (new_exception(INVALID_ARGUMENT, "fill_path (arguments/path.c)",
             "Path doesn't exist or isn't a directory"));

@@ -17,7 +17,7 @@ static void client_accept(server_t *server, client_t *client)
                 accept(server->socket, (struct sockaddr *)&client->address,
                     (socklen_t *)&client->address_length)) < 0) {
         server->exception = new_exception(RUNTIME_ERROR,
-            "client_connect (client/client_connect.c)",
+            "client_accept (client/client_connect.c)",
             "Can't accept connection");
     }
 }
@@ -29,6 +29,9 @@ static void client_init(server_t *server, client_t *client)
     client->data_mode = NONE;
     client->read_queue = buffer_create();
     client->write_queue = buffer_create();
+    client->address = server->address;
+    client->address_length = server->address_length;
+    client->data_address_length = client->address_length;
     path_copy(server->path, client->root_path);
     path_copy(server->path, client->local_path);
 }

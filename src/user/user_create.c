@@ -9,7 +9,7 @@
 
 #include "user.h"
 
-user_t user_create()
+user_t user_create(void)
 {
     user_t user;
 

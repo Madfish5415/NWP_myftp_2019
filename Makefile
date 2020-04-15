@@ -24,33 +24,51 @@ RM					=		rm -rf
 
 MAIN_SRC			=		main.c
 
-PROJ_SRC			=		arguments/flag.c				\
-							arguments/parser.c				\
-							arguments/path.c				\
-							arguments/port.c				\
-							buffer/buffer_create.c			\
-							buffer/buffer_read.c			\
-							buffer/buffer_write.c			\
-							client/client_connect.c			\
-							client/client_disconnect.c		\
-							client/client_execute.c			\
-							client/client_read.c			\
-							client/client_write.c			\
-							commands/quit.c					\
-							commands/unknown.c				\
-							error/exception.c				\
-							server/server.c					\
-							server/server_add.c				\
-							server/server_create.c			\
-							server/server_destroy.c			\
-							server/server_get.c				\
-							server/server_handle.c			\
-							server/server_init.c			\
-							server/server_remove.c			\
-							user/user_create.c				\
-							utils/path.c					\
-							utils/split.c					\
-							help.c							\
+PROJ_SRC			=		arguments/flag.c					\
+							arguments/parser.c					\
+							arguments/path.c					\
+							arguments/port.c					\
+							buffer/buffer_create.c				\
+							buffer/buffer_read.c				\
+							buffer/buffer_write.c				\
+							client/client_connect.c				\
+							client/client_disconnect.c			\
+							client/client_execute.c				\
+							client/client_read.c				\
+							client/client_write.c				\
+							commands/cdup.c						\
+							commands/cwd.c						\
+							commands/dele.c						\
+							commands/help.c						\
+							commands/list.c						\
+							commands/noop.c						\
+							commands/pass.c						\
+							commands/pasv.c						\
+							commands/port.c						\
+							commands/pwd.c						\
+							commands/quit.c						\
+							commands/retr.c						\
+							commands/stor.c						\
+							commands/unknown.c					\
+							commands/user.c						\
+							error/exception.c					\
+							server/server.c						\
+							server/server_add.c					\
+							server/server_create.c				\
+							server/server_destroy.c				\
+							server/server_get.c					\
+							server/server_handle.c				\
+							server/server_init.c				\
+							server/server_remove.c				\
+							server/server_send.c				\
+							user/user_authorize.c				\
+							user/user_connect.c					\
+							user/user_create.c					\
+							utils/pass.c						\
+							utils/path.c						\
+							utils/split.c						\
+							utils/user.c						\
+							help.c								\
 
 
 TEST_SRC			=		buffer/buffer_create/test1.c		\
