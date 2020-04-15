@@ -12,9 +12,10 @@ TEST_NAME			=		tests/unit_tests
 TEST_SH_NAME		=		tests/tests.sh
 
 COV_DIR				=		obj
-INCL_DIR			=		src
+INCL_DIR			=		include
 OBJ_DIR				=		obj
 SRC_DIR				=		src
+MAIN_DIR			= 		src
 TEST_DIR			=		tests
 
 AR					=		ar rcs
@@ -23,23 +24,72 @@ RM					=		rm -rf
 
 MAIN_SRC			=		main.c
 
-PROJ_SRC			=
+PROJ_SRC			=		arguments/flag.c					\
+							arguments/parser.c					\
+							arguments/path.c					\
+							arguments/port.c					\
+							buffer/buffer_create.c				\
+							buffer/buffer_read.c				\
+							buffer/buffer_write.c				\
+							client/client_connect.c				\
+							client/client_disconnect.c			\
+							client/client_execute.c				\
+							client/client_read.c				\
+							client/client_write.c				\
+							commands/cdup.c						\
+							commands/cwd.c						\
+							commands/dele.c						\
+							commands/help.c						\
+							commands/list.c						\
+							commands/noop.c						\
+							commands/pass.c						\
+							commands/pasv.c						\
+							commands/port.c						\
+							commands/pwd.c						\
+							commands/quit.c						\
+							commands/retr.c						\
+							commands/stor.c						\
+							commands/unknown.c					\
+							commands/user.c						\
+							error/exception.c					\
+							server/server.c						\
+							server/server_add.c					\
+							server/server_create.c				\
+							server/server_destroy.c				\
+							server/server_get.c					\
+							server/server_handle.c				\
+							server/server_init.c				\
+							server/server_remove.c				\
+							server/server_send.c				\
+							user/user_authorize.c				\
+							user/user_connect.c					\
+							user/user_create.c					\
+							utils/pass.c						\
+							utils/path.c						\
+							utils/split.c						\
+							utils/user.c						\
+							help.c								\
 
-TEST_SRC			=
+
+TEST_SRC			=		buffer/buffer_create/test1.c		\
+							buffer/buffer_read/test1.c			\
+							utils/split/test1.c					\
+							redirect.c							\
+
 
 CFLAGS				+=		-I $(INCL_DIR)
-CFLAGS				+=		-W -Wall -Wextra -Werror
+CFLAGS				+=		-W -Wall -Wextra
 
-MAIN_OBJ			=		$(MAIN_SRC:%.cpp=$(OBJ_DIR)/%.o)
+MAIN_OBJ			=		$(MAIN_SRC:%.c=$(OBJ_DIR)/%.o)
 
-PROJ_OBJ			=		$(PROJ_SRC:%.cpp=$(OBJ_DIR)/%.o)
+PROJ_OBJ			=		$(PROJ_SRC:%.c=$(OBJ_DIR)/%.o)
 
-TEST_OBJ			=		$(TEST_SRC:%.cpp=$(OBJ_DIR)/%.o)
+TEST_OBJ			=		$(TEST_SRC:%.c=$(OBJ_DIR)/%.o)
 
-TEST_COV			=		$(PROJ_SRC:%.cpp=$(COV_DIR)/%.gcda)	\
-							$(PROJ_SRC:%.cpp=$(COV_DIR)/%.gcno)	\
-							$(TEST_SRC:%.cpp=$(COV_DIR)/%.gcda)	\
-							$(TEST_SRC:%.cpp=$(COV_DIR)/%.gcno)	\
+TEST_COV			=		$(PROJ_SRC:%.c=$(COV_DIR)/%.gcda)	\
+							$(PROJ_SRC:%.c=$(COV_DIR)/%.gcno)	\
+							$(TEST_SRC:%.c=$(COV_DIR)/%.gcda)	\
+							$(TEST_SRC:%.c=$(COV_DIR)/%.gcno)	\
 
 MAKEFLAGS			+=		--silent
 
@@ -51,13 +101,13 @@ RED_B_COLOR			=		\e[1;31m
 YELLOW_B_COLOR		=		\e[1;33m
 
 
-$(OBJ_DIR)/%.o:		$(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 					mkdir -p $(@D)
 					$(CC) $(CFLAGS) -c $< -o $@ \
 					&& echo "$< $(GREEN_COLOR)successfully compiled$(NO_COLOR)" \
 					|| { echo "$< $(RED_COLOR)couldn't be compiled$(NO_COLOR)"; exit 1; }
 
-$(OBJ_DIR)/%.o:		$(TEST_DIR)/%.cpp
+$(OBJ_DIR)/%.o:		$(TEST_DIR)/%.c
 					mkdir -p $(@D)
 					$(CC) $(CFLAGS) -c $< -o $@ \
 					&& echo "$< $(GREEN_COLOR)successfully compiled$(NO_COLOR)" \
@@ -152,6 +202,9 @@ tests_fclean:		tests_clean
 tests_re:			tests_fclean tests_run
 
 tests_sweet:		tests_run tests_clean
+
+tests_debug:		CFLAGS += -g3
+tests_debug:		tests_run
 
 tests_sh:			re
 					if [ ! -d $(TEST_DIR) ] || [ ! -f $(TEST_SH_NAME) ]; then \
