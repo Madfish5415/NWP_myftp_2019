@@ -16,7 +16,7 @@ static bool is_valid(const char *path)
     struct stat path_stat;
 
     stat(path, &path_stat);
-    return (!S_ISREG(path_stat.st_mode));
+    return (S_ISDIR(path_stat.st_mode));
 }
 
 static bool path_change(server_t *server, int client_index, char *path)

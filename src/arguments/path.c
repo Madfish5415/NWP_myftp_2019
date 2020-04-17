@@ -31,7 +31,7 @@ static bool is_valid(const char *path)
     struct stat path_stat;
 
     stat(path, &path_stat);
-    return (!S_ISREG(path_stat.st_mode));
+    return (S_ISDIR(path_stat.st_mode));
 }
 
 exception_t fill_path(int argc, char **argv, args_t *arguments)
