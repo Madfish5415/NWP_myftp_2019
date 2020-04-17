@@ -48,8 +48,7 @@ static char *get_path(const char *src)
     for (int i = 0; src[i] != '\0'; i++)
         dest[i + ((need_fix) ? 2 : 0)] = src[i];
     dest[strlen(src) + ((need_fix) ? 2 : 0)] = '\0';
-    char *debug = realpath(dest, NULL);
-    return debug;
+    return realpath(dest, NULL);
 }
 
 void cmd_cwd(server_t *server, int client_index, char **cmds)
