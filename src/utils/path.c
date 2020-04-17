@@ -5,13 +5,14 @@
 ** path.c
 */
 
-#include <stdlib.h>
+#include <string.h>
 #include "type.h"
 
 void path_copy(const char* const src, char *dest)
 {
     if (src == NULL || dest == NULL) return;
 
+    memset(dest, '\0', PATH_SIZE);
     for (int i = 0; src[i] != '\0' && i < PATH_SIZE; i++)
         dest[i] = src[i];
 }
