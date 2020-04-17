@@ -9,14 +9,11 @@
 
 void server_handle_execute(server_t *server)
 {
-    if (!server)
-        return;
+    if (!server) return;
 
     for (int i = 0; server->clients && i < server->clients_nbr; i++) {
-        if (server->clients[i].read_queue.buffer_length == 0)
-            continue;
+        if (server->clients[i].read_queue.buffer_length == 0) continue;
         client_execute(server, i);
-        if (server->exception.code != NO_ERROR)
-            return;
+        if (server->exception.code != NO_ERROR) return;
     }
 }

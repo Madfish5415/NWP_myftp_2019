@@ -53,12 +53,9 @@ void server_handle_write(server_t *server)
 void server_handle_fd(server_t *server)
 {
     server_handle_read(server);
-    if (server->exception.code != NO_ERROR)
-        return;
+    if (server->exception.code != NO_ERROR) return;
     server_handle_execute(server);
-    if (server->exception.code != NO_ERROR)
-        return;
+    if (server->exception.code != NO_ERROR) return;
     server_handle_write(server);
-    if (server->exception.code != NO_ERROR)
-        return;
+    if (server->exception.code != NO_ERROR) return;
 }

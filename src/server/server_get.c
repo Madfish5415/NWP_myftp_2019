@@ -10,7 +10,6 @@
 int server_get_client(server_t *server, int fd)
 {
     for (int i = 0; i < server->clients_nbr; i++)
-        if (server->clients[i].socket == fd)
-            return i;
+        if (server->clients[i].socket == fd) return i;
     return -1;
 }
