@@ -9,6 +9,8 @@
 
 static bool is_valid(buffer_t *buffer)
 {
+    if (!buffer)
+        return false;
     if (buffer->buffer_length == 0) {
         buffer->exception = new_exception(
             RANGE_ERROR, "is_valid (buffer/buffer_read.c)", "Buffer is empty");

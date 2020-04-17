@@ -6,6 +6,7 @@
 */
 
 #include <string.h>
+
 #include "server.h"
 
 static bool is_connected(server_t *server, int client_index)
@@ -24,9 +25,6 @@ bool user_get_authorize(server_t *server, int client_index, char **cmds)
         }
     }
     is_authorize = (is_connected(server, client_index)) ? true : is_authorize;
-
-    if (!is_authorize)
-        server_send_response(server, client_index, RESPONSE_530);
-
+    if (!is_authorize) server_send_response(server, client_index, RESPONSE_530);
     return is_authorize;
 }

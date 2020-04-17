@@ -50,6 +50,7 @@ int server_get_client(server_t *server, int fd);
 
 /*  server_handle.c  */
 void server_handle_fd(server_t *server);
+void server_handle_execute(server_t *server);
 
 /*  server_init.c  */
 void server_init(server_t *server);

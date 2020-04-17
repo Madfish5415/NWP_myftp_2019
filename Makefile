@@ -58,6 +58,7 @@ PROJ_SRC			=		arguments/flag.c					\
 							server/server_destroy.c				\
 							server/server_get.c					\
 							server/server_handle.c				\
+							server/server_handle_execute.c		\
 							server/server_init.c				\
 							server/server_remove.c				\
 							server/server_send.c				\
