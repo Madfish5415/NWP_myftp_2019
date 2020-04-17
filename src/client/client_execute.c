@@ -52,7 +52,8 @@ void client_execute(server_t *server, int client_index)
             "client_execute (client_execute.c)", "Can't read string");
         return;
     }
-    str = strtok(str, "\r\n");
+    str = strtok(str, "\n");
+    str = strtok(str, "\r");
     cmds = split(str, " ");
     if (cmds) execute(server, client_index, cmds);
 }

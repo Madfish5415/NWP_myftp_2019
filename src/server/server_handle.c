@@ -20,7 +20,6 @@ static void handle_read(server_t *server, int fd)
         if (server->exception.code != NO_ERROR) return;
         client_read(server, client_index);
         if (server->exception.code != NO_ERROR) return;
-        client_execute(server, client_index);
     }
 }
 
@@ -54,6 +53,9 @@ void server_handle_write(server_t *server)
 void server_handle_fd(server_t *server)
 {
     server_handle_read(server);
+    if (server->exception.code != NO_ERROR)
+        return;
+    server_handle_execute(server);
     if (server->exception.code != NO_ERROR)
         return;
     server_handle_write(server);

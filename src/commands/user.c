@@ -16,4 +16,5 @@ void cmd_user(server_t *server, int client_index, char **cmds)
         return;
     }
     user_copy(cmds[1], server->clients[client_index].user.username);
+    server_send_response(server, client_index, RESPONSE_331);
 }

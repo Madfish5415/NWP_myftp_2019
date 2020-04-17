@@ -27,7 +27,7 @@ exception_t server_create(server_t **server, args_t *arguments)
     new_server->socket = -1;
     new_server->exception.code = NO_ERROR;
     new_server->address_length = sizeof(new_server->address);
-    new_server->timeout.tv_sec = 2;
-    new_server->timeout.tv_usec = 0;
+    new_server->timeout.tv_sec = 0;
+    new_server->timeout.tv_usec = 10000;
     return (new_server->exception);
 }
