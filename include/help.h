@@ -8,6 +8,8 @@
 #ifndef NWP_MY_FTP_2019_HELP_H
 #define NWP_MY_FTP_2019_HELP_H
 
+#include "server.h"
+
 static const char *const HELP_MESSAGE =
     "USAGE ./myftp port path\n\tport\tis the port number on which the "
     "server socket listens\n\tpath\tis the path to the home directory for "
