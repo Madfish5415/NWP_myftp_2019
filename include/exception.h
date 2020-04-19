@@ -8,8 +8,8 @@
 #ifndef NWP_MY_FTP_2019_EXCEPTION_H
 #define NWP_MY_FTP_2019_EXCEPTION_H
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 #define FAILURE 84
@@ -35,7 +35,7 @@ enum error_type {
 
 typedef struct code_match_s {
     const int16_t nbr;
-    const char* const str;
+    const char *const str;
 } code_match_t;
 
 typedef struct exception_s {
@@ -45,6 +45,6 @@ typedef struct exception_s {
 } exception_t;
 
 exception_t new_exception(int16_t code, const char *where, const char *what);
-bool catch(exception_t exception);
+bool catch (exception_t exception);
 
 #endif  // NWP_MY_FTP_2019_EXCEPTION_H

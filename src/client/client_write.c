@@ -21,7 +21,6 @@ void client_write(server_t *server, int client_index)
     }
     write(server->clients[client_index].socket, str, strlen(str));
     FD_CLR(server->clients[client_index].socket, &server->master[WRITE_SET]);
-    if (strcmp(str, RESPONSE_221) == 0)
-        client_disconnect(server, client_index);
+    if (strcmp(str, RESPONSE_221) == 0) client_disconnect(server, client_index);
     free(str);
 }

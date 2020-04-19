@@ -5,9 +5,9 @@
 ## Makefile
 ##
 
-NAME				=		my_ftp
-LIB_NAME			=		my_ftp.so
-LIB_ST_NAME			=		my_ftp.a
+NAME				=		myftp
+LIB_NAME			=		myftp.so
+LIB_ST_NAME			=		myftp.a
 TEST_NAME			=		tests/unit_tests
 TEST_SH_NAME		=		tests/tests.sh
 
