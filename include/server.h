@@ -60,6 +60,6 @@ void server_remove_client(server_t *server, int client_index);
 
 /*  server_send.c  */
 void server_send_response(
-    server_t* server, int client_index, const char* const response);
+    server_t *server, int client_index, const char *const response);
 
 #endif  // NWP_MY_FTP_2019_SERVER_H

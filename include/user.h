@@ -20,13 +20,7 @@ typedef struct user_s {
     bool connected;
 } user_t;
 
-static const char* const AUTHORIZE_LIST[] = {
-    "USER",
-    "PASS",
-    "QUIT",
-    "HELP",
-    NULL
-};
+static const char *const AUTHORIZE_LIST[] = {"USER", "PASS", "QUIT", NULL};
 
 typedef struct server_s server_t;
 

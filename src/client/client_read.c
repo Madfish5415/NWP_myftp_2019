@@ -14,8 +14,8 @@ void client_read(server_t *server, int client_index)
     int read_value = 0;
     char buffer[BUFFER_SIZE];
 
-    if ((read_value = read(
-             server->clients[client_index].socket, buffer, BUFFER_SIZE)) < 0) {
+    if ((read_value = read(server->clients[client_index].socket,
+             buffer, BUFFER_SIZE)) < 0) {
         server->exception = new_exception(RUNTIME_ERROR,
             "client_read (client_read.c)", "Can't read on the client fd");
         return;

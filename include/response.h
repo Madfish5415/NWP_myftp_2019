@@ -21,10 +21,7 @@ static const char* const RESPONSE_211 =
     "211 System status, or system help reply.\r\n";
 static const char* const RESPONSE_212 = "212 Directory status.\r\n";
 static const char* const RESPONSE_213 = "213 File status.\r\n";
-static const char* const RESPONSE_214 =
-    "214 Help message.\n"
-    "On how to use the server or the meaning of a particular"
-    "non-standard command. This reply is useful only to the human user.\r\n";
+static const char* const RESPONSE_214 = "214 Help message OK.\r\n";
 static const char* const RESPONSE_215 =
     "215 NAME system type.\n"
     "Where NAME is an official system name from the list in the "

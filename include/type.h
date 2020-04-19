@@ -12,5 +12,4 @@
 
 typedef int socket_t;
 
-
 #endif  // NWP_MY_FTP_2019_TYPE_H

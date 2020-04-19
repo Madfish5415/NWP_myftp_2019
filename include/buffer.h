@@ -29,6 +29,6 @@ char *buffer_read_string(buffer_t *buffer);
 
 /*  buffer_write.c  */
 void buffer_write_character(buffer_t *buffer, const char c);
-void buffer_write_string(buffer_t *buffer, const char* const str);
+void buffer_write_string(buffer_t *buffer, const char *const str);
 
 #endif  // NWP_MY_FTP_2019_CIRCULAR_BUFFER_H

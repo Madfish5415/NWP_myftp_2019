@@ -24,8 +24,7 @@ static bool path_change(server_t *server, int client_index, char *path)
     int i = 0;
 
     for (i = 0; i < PATH_SIZE && path[i] != '\0' &&
-         server->clients[client_index].root_path[i] != '\0';
-         i++) {
+         server->clients[client_index].root_path[i] != '\0'; i++) {
         if (path[i] != server->clients[client_index].root_path[i]) return false;
     }
     if (i == PATH_SIZE || server->clients[client_index].root_path[i] != '\0')

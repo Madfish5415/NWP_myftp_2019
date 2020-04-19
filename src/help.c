@@ -13,7 +13,7 @@
 bool display_help(args_t* arguments)
 {
     if (arguments->flags[HELP_FLAG] == true) {
-        printf(HELP_MESSAGE);
+        printf("%s", HELP_MESSAGE);
         return (true);
     }
     return (false);

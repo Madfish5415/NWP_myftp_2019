@@ -15,14 +15,10 @@
 
 #define MAX_FLAGS 2
 
-enum flag_id_list {
-    NULL_FLAG = -1,
-    HELP_FLAG = 0,
-    VERBOSE_FLAG
-};
+enum flag_id_list { NULL_FLAG = -1, HELP_FLAG = 0, VERBOSE_FLAG };
 
 typedef struct flag_match_s {
-    const char* const string;
+    const char *const string;
     int16_t flag_id;
 } flag_match_t;
 
@@ -44,6 +40,5 @@ exception_t fill_port(int argc, char **argv, args_t *arguments);
 
 /*  path.c  */
 exception_t fill_path(int argc, char **argv, args_t *arguments);
-
 
 #endif  // NWP_MY_FTP_2019_ARGUMENTS_H
