@@ -28,14 +28,11 @@ static const char* const RESPONSE_215 =
     "Assigned Numbers document.\r\n";
 static const char* const RESPONSE_220 = "220 Service ready for new user.\r\n";
 static const char* const RESPONSE_221 =
-    "221 Service closing control connection.\n"
-    "Logged out if appropriate.\r\n";
+    "221 Service closing control connection.\r\n";
 static const char* const RESPONSE_225 =
     "225 Data connection open; no transfer in progress.\r\n";
 static const char* const RESPONSE_226 =
-    "226 Closing data connection.\n"
-    "Requested file action successful (for example, file transfer or file "
-    "abort).\r\n";
+    "226 Closing data connection.\r\n";
 static const char* const RESPONSE_227 =
     "227 Entering Passive Mode (h1,h2,h3,h4,p1,p2).\r\n";
 static const char* const RESPONSE_230 = "230 User logged in, proceed.\r\n";
@@ -51,16 +48,14 @@ static const char* const RESPONSE_425 = "425 Can't open data connection.\r\n";
 static const char* const RESPONSE_426 =
     "426 Connection closed; transfer aborted.\r\n";
 static const char* const RESPONSE_450 =
-    "450 Requested file action not taken.\n"
-    "File unavailable(e.g., file busy).\r\n";
+    "450 Requested file action not taken.\r\n";
 static const char* const RESPONSE_451 =
     "451 Requested action aborted: local error in processing.\r\n";
 static const char* const RESPONSE_452 =
     "452 Requested action not taken.\n"
     "Insufficient storage space in system.\r\n";
 static const char* const RESPONSE_500 =
-    "500 Syntax error, command unrecognized.\n"
-    "This may include errors such as command line too long.\r\n";
+    "500 Syntax error, command unrecognized.\r\n";
 static const char* const RESPONSE_501 =
     "501 Syntax error in parameters or arguments.\r\n";
 static const char* const RESPONSE_502 = "502 Command not implemented.\r\n";
@@ -77,15 +72,12 @@ static const char* const RESPONSE_530_PASS =
 static const char* const RESPONSE_532 =
     "532 Need account for storing files.\r\n";
 static const char* const RESPONSE_550 =
-    "550 Requested action not taken.\n"
-    "File unavailable (e.g., file not found, no access).\r\n";
+    "550 Requested action not taken.\r\n";
 static const char* const RESPONSE_551 =
     "551 Requested action aborted: page type unknown.\r\n";
 static const char* const RESPONSE_552 =
-    "552 Requested file action aborted.\n"
-    "Exceeded storage allocation (for current directory or dataset).\r\n";
+    "552 Requested file action aborted.\r\n";
 static const char* const RESPONSE_553 =
-    "553 Requested action not taken.\n"
-    "File name not allowed.\r\n";
+    "553 Requested action not taken.\r\n";
 
 #endif  // NWP_MY_FTP_2019_RESPONSE_H
